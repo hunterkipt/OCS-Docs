@@ -4,3 +4,6 @@
 - name: OMF
   href: connectors/omf/toc.yml
   topicHref: connectors/omf/omf-overview.md
+- name: Edge systems
+  href: edge-systems/toc.yml
+  topicHref: edge-systems/edge-system-management.md

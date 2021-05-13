@@ -1,0 +1,4 @@
+- name: View edge system status
+  href: view-edge-system-status.md
+- name: Manage edge system tags
+  href: manage-edge-system-tags.md
