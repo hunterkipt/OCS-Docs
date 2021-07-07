@@ -5,7 +5,7 @@ uid: gsNamespaces
 
 # Get started with namespaces
 
-The first task is to create a namespace, a logical unit of organization for data within a tenant. For more information on namespaces, see the following:
+The first task is to create a namespace, a logical unit of organization for data within a tenant. For more information on namespaces, see the following topics:
 
 - [Namespaces](xref:ccNamespaces)
 - [PI Server counterpart](xref:ccNamespaces#pi-server-counterpart) 

@@ -3,7 +3,7 @@ uid: gsUsers
 ---
 # Get started with users
 
-A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant. Roles assigned to a user determine what permissions the user has on resources in OCS. See the following for more information about users:
+A user is an identity that has access to an OSIsoft Cloud Services (OCS) tenant. Roles assigned to a user determine what permissions the user has on resources in OCS. See the following topics for more information about users:
 
 - [Users](xref:ccUsers)
 - [PI Server counterpart](xref:ccUsers#users-pi-server)

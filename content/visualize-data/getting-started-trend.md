@@ -35,7 +35,7 @@ Procedure
     The following screen capture shows the stacked view.
     ![Trend dislaying traces in stacked view](images/Traces_stacked_view.png)
    
-5. Click the time picker and select the time range you want to view. If the desired time range doesn't appear in this list, click the **Custom Range** tab and specify your time range.<br>
+5. Click the time picker and select the time range you want to view. If the desired time range does not appear in this list, click the **Custom Range** tab and specify your time range.<br>
 
     ![Time picker](images/Time-picker.png)
 <br>

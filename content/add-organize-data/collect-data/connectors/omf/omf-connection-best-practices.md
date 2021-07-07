@@ -4,7 +4,7 @@ uid: bpOMFConnection
 
 # OMF connections best practices
 
-The most important considerations with OSIsoft Message Format (OMF) connections are to ensure applications use the correct client credentials and security is correctly configured for OMF connections.
+Successful OMF connections depend on using the correct client credentials and configuring security correctly. OSIsoft recommends the following best practices for OMF connections:
 
 - Each type of application or system that sends OMF data to OCS should have its own defined OMF connection, with the name and description referencing the data source.
 

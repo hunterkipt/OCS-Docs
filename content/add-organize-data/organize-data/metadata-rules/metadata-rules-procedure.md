@@ -43,6 +43,7 @@ To create a new metadata rule, follow these steps:
 18. Click **Save & Execute**.
 
 ## Metadata types
+The table below provides a list of metadata types and descriptions.<!--Vicki T. 6/25/21 -Is there anything else we want the user to know about these metadata types? It seemed odd that this table appears at the end of the procedure since metadata types are discussed/selected in steps 11 and 12. I recommend moving the table after the "Create a metadata rule" section. Angela Flores - Will hold off until we finalize guidelines for procedure.-->
 
 | Metadata type                       | Description                                        |
 |---------------------------------|------------------------------------------------------------|

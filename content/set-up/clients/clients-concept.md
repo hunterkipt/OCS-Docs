@@ -3,27 +3,25 @@ uid: ccClients
 ---
 # Clients
 
-Clients provide a way for users or applications to authenticate against OSIsoft Cloud Services (OCS) from applications other than the OCS portal. OCS supports three types of clients, each of which support different types of applications.
-
-You must have the Tenant Administrator role to add and manage clients in a tenant.
-
-The following clients are described in this topic:
+Clients allow applications to authenticate against OSIsoft Cloud Services (OCS) from outside the OCS portal. OCS supports the following types of clients, each of which support different types of applications:
 
 - [Client-credentials clients](#client-credentials-client)
 - [Authorization code clients](#authorization-code-client)
 - [Hybrid clients](#hybrid-client) <!-- Josh Kim Mar19021: Similar to the comment as before where we should ask if Hybrid Clients are still worth mentioning?. -->
 
-## <a name="client-credentials-client"></a>Introduction to client-credentials clients
+You must have the Tenant Administrator role to add and manage clients in a tenant.
 
-Client-credentials clients are used for server-to-server communication where no user interaction is required. The client typically authenticates with the token endpoint using its client ID and secret. A secret is a unique key generated for each client to connect to OSIsoft assets, resources, and services for a time-limited period.
+## <a name="client-credentials-client"></a>Client-credentials clients
+
+Use client-credentials clients for server-to-server communication that does not require user interaction. The client typically authenticates with the token endpoint using its client ID and secret. A secret is a unique key generated for each client to connect to OSIsoft assets, resources, and services for a time-limited period. Because secrets allow access to data, you need to keep them secure.
 
 ### <a name="client-credentials-pi-server"></a>Client-credentials client PI Server counterpart
 
-Client-credentials clients are very similar to Microsoft Windows service accounts that might be used to authenticate against PI Data Archive or PI AF server. Therefore, it is very important to keep secrets secure in the same way that it is important to keep service account passwords secure.
+Client-credentials clients are very similar to Microsoft Windows service accounts that applications can use to authenticate against PI Data Archive or PI AF server. 
 
 ### <a name="client-credentials-bp"></a>Client-credentials client best practices
 
-The following best practices are recommended when you use a client credentials client:
+Use following best practices with a client credentials client:
 
 - Create a separate client-credentials client for each device or instance of an application that connects to OCS. This ensures that secrets can be discretely managed for individual applications and that you know which applications are connecting to OCS.
 
@@ -31,7 +29,7 @@ The following best practices are recommended when you use a client credentials c
 
 - Use secrets that expire and rotate them on a schedule. When it is time to switch to a new secret, OSIsoft recommends that you create the new secret, redirect the application to use the new secret, and only delete the old secret from the client when it is no longer being used.
 
-##  <a name="authorization-code-client"></a>Introduction to authorization code clients
+##  <a name="authorization-code-client"></a>Authorization code clients
 
 Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view OCS assets. The authorization code client is paired with a client ID. The web application that is using the client to authenticate users must include the client ID in its code.
 
@@ -49,7 +47,7 @@ The following best practices are recommended when you use an authorization code 
 
 - Because refresh tokens are not generated in this flow, web applications should use an iframe to request a new token before the existing token expires. Otherwise, the user will have to explicitly log in again to get a new token once their token expires.
 
-## <a name="hybrid-client"></a>Introduction to hybrid clients
+## <a name="hybrid-client"></a>Hybrid clients
 
 Hybrid clients are used by native and server-side web applications. This client utilizes the user credentials to authenticate with the identity provider. Once the user is authenticated, then the server-side client steps in and server-to-server communication commences. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided.
 
@@ -59,10 +57,8 @@ Hybrid clients have no direct PI Server equivalent, but they are similar to the 
 
 ### <a name="hybrid-client-bp"></a>Hybrid client best practices
 
-The following best practices are recommended when you use a hybrid client:
+OSIsoft recommends the following best practices when you use a hybrid client:
 
 - Use hybrid clients in web applications or services where users authenticate against OCS through a web browser, but a secure backend that stores the secrets performs the actual authentication.
 
 - Use caution when deciding whether to allow refresh tokens for your hybrid client. Where possible, it is a more secure practice to use an iframe to request a new token before the old token expires rather than use a refresh token.
-
-  

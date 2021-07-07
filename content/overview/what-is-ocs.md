@@ -4,7 +4,7 @@ uid: WhatIsOCS
 
 # What is OSIsoft Cloud Services?
 
-OSIsoft Cloud Services (OCS) is a cloud data platform for storing, retrieving, and analyzing sequentially indexed data. OCS creates a seamless, trustworthy data infrastructure to incorporate information from sensors, plants, enterprises, and communities of interested users. This enables Operational Technology (OT) to be fully utilized across an organization. 
+OSIsoft Cloud Services (OCS) is a cloud data platform for storing, retrieving, and analyzing sequentially indexed data. OCS creates a seamless, trustworthy data infrastructure to incorporate information from sensors, plants, enterprises, and communities of interested users. This infrastructure enables data sharing and usage within your organization, across locations, and even with external partners.
 
 OCS offers the following capabilities: 
 
@@ -19,39 +19,44 @@ OCS offers the following capabilities:
 
 OCS provides a variety of methods to collect data into the system. You can ingress data from an external application or from PI Server directly to OCS using any of the following methods: 
 
-### PI to OCS
+- PI to OCS Agent
+- OSIsoft Message Format
+- Edge Data Store
+- PI Adapters
+- REST API
 
-PI to OCS transfers PI time-series data from an on-premises PI Server into OCS. PI to OCS maps PI Data Archive PI points to SDS types and streams. 
+### PI to OCS Agent
 
-### OSIsoft Message Format (OMF)
+The PI to OCS Agent transfers PI time-series data from an on-premises PI Server into OCS. PI to OCS maps PI Data Archive PI points to SDS types and streams. 
 
-OMF is a platform-independent format for passing JSON messages to OCS using an HTTP client. Use OMF to achieve a high-throughput data feed into OCS. 
+### OSIsoft Message Format
 
-### Edge Data Store (EDS)
+OSIsoft Message Format (OMF) is a platform-independent format for passing JSON messages to OCS using an HTTP client. Use OMF to achieve a high-throughput data feed into OCS. 
 
-EDS uses OMF messages to feed data into OCS from multiple edge devices.
+### Edge Data Store
+
+Edge Data Store (EDS) uses OMF messages to send data into OCS from edge devices.
 
 ### PI Adapters 
 
-PI Adapters are available to feed data into OCS from a variety of data collection devices using OMF messaging. 
+PI Adapters use OMF messaging to send data into OCS from a variety of data collection devices. 
 
-### Programmatic REST API 
+### REST API 
 
 Developer-friendly REST APIs provide programmatic access to read and write sequential data into OCS. 
 
 ## Integration with external tools and applications
 
-OCS allows you to integrate data with many different partner applications, data pipelines and workflows, collaboration tools, business intelligence (BI) and data exploration tools, and custom applications. A few examples include: 
+OCS allows you to integrate data with many different partner applications, data pipelines and workflows, collaboration tools, business intelligence (BI) and data exploration tools, and custom applications. A few examples include these tools: 
 
 - Power BI 
-
 - Grafana 
 
 You can integrate and view OCS data in the following ways: 
 
-- Building applications with OCS client libraries to read and write data to OCS 
-- Using the OCS REST API to read and write data to OCS 
-- Retrieving tabular data with OCS data views 
+- Build applications with OCS client libraries to read and write data to OCS 
+- Use the OCS REST API to read and write data to OCS 
+- Retrieve tabular data with OCS data views 
 
 OCS also offers opportunities for many new types of data consumers. For example, you could integrate OCS with applications that perform machine learning or AI functions. 
 
@@ -69,12 +74,12 @@ When a tenant requests a new namespace, OCS provisions a new set of microservice
 
 ## Interruption resilience
 
-To prevent data interruptions or loss, OCS incorporates many safeguards. By design, OCS is built for high availability. You are not required to perform any specific actions to ensure continuous access to reliable, distributed data storage. 
+To prevent data interruptions or loss, OCS incorporates many safeguards. By design, OCS is built for high availability. You are not required to perform any specific actions to ensure continuous access to reliable, distributed data storage.
 
-OSIsoft continuously tests OCS to ensure the platform is performing reliably. Both the platform and the underlying operating systems are updated regularly. In addition, OSIsoft conducts frequent threat analyses to thwart potential exploitations. Load balancing precludes distributed denial of service attacks. A gateway prevents unauthorized access to resources. 
+OSIsoft continuously tests OCS to ensure the platform is performing reliably. Both the platform and the underlying operating systems are updated regularly. In addition, OSIsoft conducts frequent threat analyses to thwart potential exploitations. Load balancing precludes distributed denial of service attacks. A gateway prevents unauthorized access to resources.
 
 ## Easy management and maintenance
 
-OSIsoft manages, operates, and maintains all aspects of the OCS platform. OCS is built and deployed on Microsoft Azure and operates outside the OSIsoft corporate firewall. Currently, OCS runs in two Azure regions: West US and West Europe. By housing the platform in multiple regions, OCS accommodates regulations that mandate where data must be stored. 
+OSIsoft manages, operates, and maintains all aspects of the OCS platform. OCS is built and deployed on Microsoft Azure and operates outside the OSIsoft corporate firewall. Currently, OCS runs in two Azure regions: West US and West Europe. By housing the platform in multiple regions, OCS accommodates regulations that mandate where data must be stored.
 
-With OCS, you can perform virtually all actions on your data infrastructure by using modern, secure, developer-friendly REST APIs. OCS also provides an easy-to-use user interface. 
+Access your data infrastructure through the OCS web-based portal or by using modern, secure, developer-friendly REST APIs.

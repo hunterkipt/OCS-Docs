@@ -3,7 +3,7 @@ uid: gsAssetTypes
 ---
 # Get started with asset types
 
-An asset type is a template for creating assets that share a common structure or type. For more information about asset types, see the following:
+An asset type is a template for creating assets that share a common structure or type. For more information about asset types, see the following topics:
 
 - [Asset types](xref:AssetTypes)
 - [PI Server counterpart](xref:AssetTypes#pi-server-counterpart)

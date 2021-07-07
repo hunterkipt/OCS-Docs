@@ -29,7 +29,7 @@ Once you have completed the pre-requisites, log into the OCS portal.
 
 ## OCS portal
 
-The OCS portal is a web-based application through which you can perform many of the tasks you need to perform. Alternatively, you can accomplish the same tasks through the OCS REST-based API. This introduction to OCS uses the portal functionality. Before you start the exercises, see [Introduction to the portal interface](xref:introPortalInterface) to get an overview of the user interface.
+The OCS portal is a web-based application through which you can perform many of the tasks you need to perform. Alternatively, you can accomplish the same tasks through the OCS REST-based API. This introduction to OCS uses the portal functionality. Before you start the exercises, see [Introduction to the OCS portal](xref:introPortalInterface) to get an overview of the user interface.
 ## Get started goals
 
 In this get started exercise, you will do the following:

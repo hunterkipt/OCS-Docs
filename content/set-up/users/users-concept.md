@@ -15,10 +15,8 @@ An OCS user is comparable to a mapping in PI Data Archive. For example, in PI Da
 
 ## <a name="users-bp"></a>Users best practices
 
-The following best practices are recommended when you are setting up your users:
+OSIsoft recommends the following best practices when you add users:
 
-- The OCS invitation is sent to the user at the email address specified in the Contact Email field. Therefore, verify that it is correct to ensure that your users receive the invitation and ensure that it is not sent to an unintended recipient, giving them access to OCS.
+- Send the OCS invitation to the user at the email address specified in the Contact Email field. Verify that the user's email address is correct to ensure the invitation was received, and not sent to an unintended recipient, unintentionally giving access to OCS.
 
-- Before inviting users to OCS, ensure that they have been granted the correct permissions through their roles. In particular, consider the access granted to the Tenant Member role which, by default, grants read access to everything in the tenant. If a user should not have read access to some resources, the Tenant Member role can be limited.
-
-  
+- Ensure a user has been granted the correct permissions through role assignment before sending the OCS invitation. In particular, consider the access granted to the Tenant Member role, which, by default, grants read access to everything in the tenant. If a user should not have read access to some resources, the Tenant Member role can be limited.

@@ -4,8 +4,7 @@ uid: log-messages
 
 # Common Event Viewer log messages
 
-The table below summarizes the most common messages logged by the Event Viewer.
-
+The following table below summarizes the most common messages logged by the Event Viewer.
 
 Message | ID   | Description
 ---------|----------|---------

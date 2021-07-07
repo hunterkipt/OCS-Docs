@@ -3,10 +3,9 @@ uid: ccRoles
 ---
 # Roles
 
-Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients. When an identity attempts to access a resource in OCS, the identity's list of roles is compared against the permissions on the resource to determine whether access is allowed.
+Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). Roles are assigned to identities, which includes users, groups, and client-credentials clients. When an identity tries to access a resource in OCS, OCS checks the assigned roles against the permissions on the resource to determine their access level.
 
-
-There are five built-in roles which cannot be removed from a tenant.
+There are five built-in roles which cannot be removed from a tenant:
 
 - Tenant Administrator - OCS Administrator of OCS who is granted full permissions throughout OCS, by default. This is the highest privilege role, with the ability to create new and remove existing users, clients and secrets. OSIsoft recommends not assigning this role to clients.
 - Tenant Contributor - Granted read and write permissions throughout OCS, by default.
@@ -14,13 +13,9 @@ There are five built-in roles which cannot be removed from a tenant.
 - Tenant Viewer - No specific permissions are granted to this role, by default.
 - Tenant Member - This role is assigned to all users or clients in OCS. Tenant members are granted read access throughout OCS, by default.
 
-In addition, you can create custom roles which are not granted any specific permissions, by default. 
+You can add roles to further control access. By default, added roles do not have any specific permissions. You must have the Tenant Administrator role to add and manage roles in a tenant. 
 
-Simply assigning a role to a user or client does not determine access. This is defined when a role is explicitly allowed or denied access to OCS resources.
-
-For any resource in OCS, permissions are allowed or denied for specific roles, rather than to specific users or clients. These permissions are managed using the Manage Permissions for the given resource. Each role can be allowed or denied access to one or more of the following access types: Read, Write Delete, and Manage Permissions.
-
-You must have the Tenant Administrator role to add and manage roles in a tenant.
+Assigning a role to a user or client does not determine access. For any resource in OCS, you set access on the resource for specific roles, rather than for specific users or clients. Manage access using Manage Permissions for the given resource. For each role, you set access to the following access types: Read, Write, Delete, and Manage Permissions.
 
 ## <a name="roles-pi-server"></a>PI Server counterpart
 
@@ -28,7 +23,7 @@ Roles in OCS are comparable to PI identities in PI Data Archive or identities in
 
 ## <a name="roles-bp"></a>Roles best practices
 
-The following best practices are recommended when you create and assign roles to users:
+OSIsoft recommends the following best practices when you create and assign roles:
 
 - Consider whether the read access granted by the Tenant Member role is acceptable for all users and clients in your tenant. Specifically, if you plan to invite users from outside your organization, you may want to limit their read access. One way to do this is to create a custom role for external users so that their permissions can be explicitly managed.
 

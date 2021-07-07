@@ -3,7 +3,7 @@ uid: gsMetadataRules
 ---
 # Get started with metadata rules
 
-Metadata rules allow you to add metadata to streams. For more information about metadata rules and how to use them effectively, refer to the following:
+Metadata rules allow you to add metadata to streams. For more information about metadata rules and how to use them effectively, refer to the following topics:
 
 - [Metadata rules](xref:ccMetadataRules)
 - [PI Server counterpart](xref:ccMetadataRules#pi-server-counterpart)

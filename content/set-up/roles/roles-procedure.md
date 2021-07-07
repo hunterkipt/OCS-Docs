@@ -3,7 +3,7 @@ uid: gpRoles
 ---
 # Add a role
 
-Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). See the following for more information about roles:
+Roles are used to manage access to assets, resources, and services in OSIsoft Cloud Services (OCS). See the following topics for more information about roles:
 
 - [Roles](xref:ccRoles)
 - [PI Server counterpart](xref:ccRoles#roles-pi-server)

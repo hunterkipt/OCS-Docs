@@ -6,7 +6,7 @@ uid: remove-agent
 
 You can search for PI to OCS Agents that have been installed on host machines at your organization.  The global filter feature allows you to search for Agents by name, status, version number, hostname, PI Data Archive or AF server name, region, and namespace.  
 
-Use the global filter feature to filter down a large list of agents to only ones of interest.  For example, you may want to remove or uninstall older agents.
+Use the global filter feature to filter down a large list of agents to only ones of interest.  For example, you may want to remove or uninstall older agents. This topic contains the following procedures:
 
 * [Search for an agent](#search-for-an-agent)
 * [Uninstall an agent](#uninstall-an-agent)

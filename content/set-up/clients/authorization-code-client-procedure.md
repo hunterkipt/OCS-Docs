@@ -3,7 +3,7 @@ uid: gpAuthorizationCodeClient
 ---
 # Add an authorization code client
 
-Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view OCS assets. See the following for more information about authorization code clients:
+Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view OCS assets. See the following topics for more information about authorization code clients:
 
 - [Introduction to authorization code clients](xref:ccClients#authorization-code-client)
 - [Authorization code client PI Server counterpart](xref:ccClients#authorization-code-pi-server)

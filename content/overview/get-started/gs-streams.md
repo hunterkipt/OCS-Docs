@@ -4,7 +4,7 @@ uid: gsStreams
 
 # Get started with streams
 
-After creating your types, you can add streams and associate a type with the stream. For more information on streams, see the following:
+After creating your types, you can add streams and associate a type with the stream. For more information on streams, see the following topics:
 
 - [Streams](xref:ccStreams)
 - [PI Server counterpart](xref:ccStreams#streams-pi-server)

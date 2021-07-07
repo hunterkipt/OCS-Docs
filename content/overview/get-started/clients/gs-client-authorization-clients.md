@@ -3,7 +3,7 @@ uid: gsAuthorizationCodeClients
 ---
 # Get started with authorization code clients
 
-Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view OCS assets. See the following for more information about authorization code clients:
+Authorization code clients are used with customer web applications that use OCS as their backend. They provide a secure means of authenticating users of the website to view OCS assets. See the following topics for more information about authorization code clients:
 
 - [Introduction to authorization code clients](xref:ccClients#authorization-code-client)
 - [Authorization code client PI Server counterpart](xref:ccClients#authorization-code-pi-server)
@@ -37,7 +37,7 @@ Authorization code clients are used with customer web applications that use OCS 
 
 ## Next step
 
-Continue with either of the following:
+Continue with either of the following topics:
 
 - [Get started with client-credentials clients](xref:gsClientCredentialsClients) 
 - [Get started with hybrid clients](xref:gsHybridClients)

@@ -3,7 +3,7 @@ uid: gpHybridClient
 ---
 # Add a hybrid client
 
-Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided. See the following for more information about hybrid clients:
+Hybrid clients are used by native and server-side web applications. Authentication can be performed using any browser. The server-side code retrieves an access token and a refresh token can also be provided. See the following topics for more information about hybrid clients:
 
 - [Introduction to hybrid clients](xref:ccClients#hybrid-client)
 - [Hybrid client PI Server counterpart](xref:ccClients#hybrid-client-pi-server)

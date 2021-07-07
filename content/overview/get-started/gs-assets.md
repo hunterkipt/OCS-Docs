@@ -3,7 +3,7 @@ uid: gsAssets
 ---
 # Get started with assets
 
-An asset is a container that includes metadata and references to streams related to a logical asset. For more information about assets, see the following:
+An asset is a container that includes metadata and references to streams related to a logical asset. For more information about assets, see the following topics:
 
 - [Assets](xref:ccAssets)
 - [PI Server counterpart](xref:ccAssets#pi-server-counterpart)
