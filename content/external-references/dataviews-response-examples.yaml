@@ -371,6 +371,60 @@ dataviews-get:
     }
     ```
 # resolved resources responses
+allfieldsets-get:
+  type: markdown
+  value: |
+    ```json
+    HTTP 200 OK
+    {
+        "TimeOfResolution": "2019-12-13T01:23:45Z",
+        "Items": [
+            {
+                "QueryId": "weather",
+                "DataFields": [
+                    {
+                        "Source": "Id",
+                        "Keys": [],
+                        "Label": "{IdentifyingValue} Id"
+                    },
+                    {
+                        "Source": "PropertyId",
+                        "Keys": [
+                            "SolarRadiation"
+                        ],
+                        "Label": "{IdentifyingValue} SolarRadiation {Uom} {SummaryType}"
+                    },
+                    {
+                        "Source": "PropertyId",
+                        "Keys": [
+                            "Temperature"
+                        ],
+                        "Label": "{IdentifyingValue} Temperature {Uom} {SummaryType}"
+                    },
+                    {
+                        "Source": "Metadata",
+                        "Keys": [
+                            "Site"
+                        ],
+                        "Label": "{IdentifyingValue} Site {Uom}"
+                    },
+                    {
+                        "Source": "Tags",
+                        "Keys": [
+                            "Weather",
+                            "Low Resolution",
+                            "High Resolution",
+                            "Gen1",
+                            "Gen2",
+                        ],
+                        "Label": "{IdentifyingValue} Tags"
+                    }
+                ]
+            }
+        ]
+    }
+    ```
+
 availablefieldsets-get:
   type: markdown
   value: |
