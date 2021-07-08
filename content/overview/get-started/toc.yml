@@ -22,3 +22,5 @@
   topicHref: gs-asset-types.md
 - name: Get started with metadata rules
   topicHref: gs-metadata-rules.md
+- name: Get started with data views
+  topicHref: gs-data-views.md

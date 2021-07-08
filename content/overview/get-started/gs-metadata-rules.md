@@ -97,7 +97,6 @@ On the Define Mappings page, you see the following. Below the stream pattern are
 5. To generate mappings from existing streams, click **Generate Mappings**.
 
    OCS searches and finds any existing streams that match the pattern (in this example, the **MyOCS.{Region}.{Site}.*** pattern). For each stream that matches the pattern, it lists that part of the stream name, in this example, it lists the part that corresponds to the **Site** key.
-   
 
 ![Metadata mapping](images/metadata-mapping-site.png)
 
@@ -133,3 +132,7 @@ Apply the metadata rule to the streams and review the results.
 3. When you are done, click **Save & Execute**.
 
    The stream metadata is created for the applicable streams. Once this is completed, examine the streams and verify that the metadata has been created. 
+
+## Next step
+
+Continue with [Get started with data views](xref:gsDataViews).

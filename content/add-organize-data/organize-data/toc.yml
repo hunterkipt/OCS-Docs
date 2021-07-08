@@ -4,5 +4,6 @@
 - name: Add context with metadata rules
   href: metadata-rules/toc.yml
   topicHref: metadata-rules/metadata-rules-concept.md
-- name: Create a data view
-  topicHref: data-views/data-views.md
+- name: Organize data for analysis
+  href: data-views/toc.yml
+  topicHref: data-views/data-views-lp.md
