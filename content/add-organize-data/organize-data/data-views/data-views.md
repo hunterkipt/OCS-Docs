@@ -17,17 +17,25 @@ Data views are subsets of data from one or more streams. You create a data view 
 
    **Note**: Assets are available for use through specific licensing only. If you are interested in using Assets, contact your account team for more details. 
    
-6. In the `Search` field of the `Query Value` section, type a portion of the name of any known stream or asset (preceded/followed by the * wildcard symbol). 
+6. In the `Search` field of the `Query Value` section, type a portion of the name of any known stream or asset (preceded/followed by the * wildcard symbol). The query results populate and the `Index Configuration` pane displays.
 
    **Note**: If you have created a metadata rule in the same namespace, you can enter a selected metadata key instead of a stream name in the `Search` field to select a more specific set of streams.
    
-7. Click **Save**. The query results populate and the `Index Configuration` pane displays.
-8. In the `Index Configuration` pane, select the date and time for the **Start Index** and **End Index** to specify the time period of the data to include in the data view.
-9. In the `Time Interval` field, specify the time interval by which to display data. The `Time Interval` field provides entry spaces for Days, Hours, Minutes, and Seconds.
-10. Select **Save Default with Data View** to save your settings with this data view.
-11. In the `Field Management` pane, click **Add**. Then in the `Add Data Fields` window, select the data fields from the query results to include in the data view and click **Add**.
-12. In the `Field Management` pane, use the **Up** and **Down** Arrow buttons to move selected data fields up or down in the display, and click **Apply**.
-13. Click **Save**.
+7. Select any stream in the query results to display the individual data fields of the stream in the `Data Item Details` pane.
+
+   **Note**: Click the **Add Query** button to create as many additional queries as you want.
+
+8. Click **Save** to accept the query results as the basis of the new data view. The `Field filter` pane displays. 
+9. The **Index field** and **Grouping fields** selections are set by default. In the **Identifying field** section of the `Field filter` pane, select each data field you want to use as an identifying field.
+10. In the `Generate Preview` pane, click the **Auto Refresh** toggle button to enable or disable auto refresh. With auto refresh enabled, changes to any of the streams included in the data view will be immediately reflected in the data view.
+11. OPTIONAL: Click the **Generate preview** button to generate a preview of the data view with the selected settings.
+12. Click the **Items per page** droplist to select the number of items to be displayed per page in the data view.
+13. Click the date and time display to set the **Start Index** and **End Index** to specify the time period of the data to include in the data view.
+14. Click the **Interpolated/Stored** droplist and select **Interpolated** or **Stored** for the data view. 
+15. Click the **View in API Console** button to display basic parameters of the data view in the API console.
+16. Click **Apply** to create the data view with the settings you have selected.
+17. Click **Save** to save the data view and continue working, or click **Save and Close** to exit.
+
 
 ## Related links
 
