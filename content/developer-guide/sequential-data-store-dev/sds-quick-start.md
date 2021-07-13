@@ -381,3 +381,9 @@ header, you can tell the server how long to spend on a particular request before
 terminates the request if the time it takes to process the request exceeds the timeout value set in the header.
 
 To specify the request timeout value, include the Request-Timeout header and specify the value in seconds.
+
+> [!NOTE]
+>
+> For write data requests, the `Request-Timeout` header may not be acknowledged by SDS.
+> It is to allow ample time for a large amount of data to be written. 
+> [Write data APIs](xref:sdsWritingDataApi) adhere to an internal timeout setting of 5 minutes (300 seconds.)
