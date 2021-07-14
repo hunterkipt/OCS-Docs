@@ -10,14 +10,23 @@ If an asset references an existing asset type and the asset type has a correspon
 
 Create, read, update, and delete of an asset status mapping is done through the asset or asset type itself.
 
-## Status mapping properties table
+## Status table
+
+The following table lists the most common fields in a status mapping.
+
+| Property       | Type       | Required? | Searchable? | Description                                                  |
+| -------------- | ---------- | --------- | ----------- | ------------------------------------------------------------ |
+| DefinitionType | String     | Required  | No          | At this moment, only the value "StreamPropertyMapping" is supported. |
+| Definition     | Definition | Required  | No          | Status definition.                                           |
+
+## Status definition table
 
 The following table lists the most common fields in a status mapping.
 
 | Property            | Type                     | Required? | Searchable? | Description                                                  |
 | ------------------- | ------------------------ | --------- | ----------- | ------------------------------------------------------------ |
 | StreamReferenceId   | String                   | Required  | No          | `Id` for the asset's StreamReferences property. The stream reference must exist before the status mapping can be created. |
-| StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.  <!-- StreamReferences? -->The SDS stream property must be a numeric enumeration, character, or string type. |
+| StreamPropertyId    | String                   | Required  | No          | SDS stream property that status uses for calculations. It must be present on the StreamId property on the asset StreamReference.  The SDS stream property must be a numeric enumeration, character, or string type. |
 | ValueStatusMappings | List<ValueStatusMapping> | Required  | No          | The value status mapping maps values to a given status. See [Value status mapping properties table](xref:AssetStatus#value-status-mapping-properties-table) |
 ## Value status mapping properties table
 
@@ -44,20 +53,23 @@ The following is an example of a status property which is on the asset or asset 
 
 ```
 "Status": {
-    "StreamReferenceId": "Reference1",
+  "DefinitionType": "StreamPropertyMapping",
+  "Definition": {
+    "StreamReferenceId": "AssetStreamReferenceId1",
     "StreamPropertyId": "Value",
     "ValueStatusMappings": [
-        {
-            "Value": 0,
-            "Status": 0,
-            "DisplayName": "Bad"
-        }
-        {
-            "Value": 1,
-            "Status": 1,
-            "DisplayName": "Good"
-        }
+      {
+        "Value": 3,
+        "Status": "Bad",
+        "DisplayName": "Bad"
+      },
+      {
+        "Value": 1,
+        "Status": "Good",
+        "DisplayName": "Good"
+      }
     ]
+  }
 }
 ```
 The asset or asset type's `StreamReferences` field has an `Id` property. To assign a status mapping to an asset or asset type, the value assigned to the `Id` property must match the `StreamReferenceId` of the status mapping object. Using the status mapping example above, AssetStreamReferenceId1 is assigned to the asset in the following example. 
@@ -85,7 +97,7 @@ The status of an asset is determined by an exact match of the SDS stream propert
 ### Request
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/status/last
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Last
 ```
 
 ### Parameters
@@ -116,13 +128,104 @@ The response includes a status code and a response body.
 HTTP 200 OK
 Content-Type: application/json
 {
-   "AssetId": "TemperatureSensorAsset",
-    "Status": 1, 
-   "Value": "85",
-   "DisplayName": "TemperatureSensorBuild1InF",
-   "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+	"AssetId": "TemperatureSensorAsset",
+	"Status": 1,
+	"Value": "85",
+    "DisplayName": "TemperatureSensorBuild1InF",
+    "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
 }
 ```
+
+***
+
+## `Asset Status Range Summary`
+
+Returns the status summary of an asset.
+
+### Request
+
+```text 
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Assets/{assetId}/Status/Summary
+?startIndex={startIndex}&endIndex={endIndex}&intervals={intervals}
+```
+
+### Parameters
+
+`string tenantId`  
+Tenant identifier
+
+`string namespaceId`  
+Namespace identifier
+
+`string assetId`  
+Asset identifier
+
+`string startIndex`  
+Start index
+
+`string endIndex`  
+End index
+
+`string intervals`  
+Number of intervals
+
+### Response
+
+The response includes a status code and a response body.
+
+| Status Code       | Body Type    | Description                                                  |
+| ----------------- | ------------ | ------------------------------------------------------------ |
+| 200 OK            | Asset status summary | The asset status summary is returned.                                |
+| 400 Bad Request   | error        | The request is not valid. See the response body for additional details. |
+| 403 Forbidden     | error        | You are not authorized to view the requested asset.          |
+| 404 Not Found     | error        | The specified asset with identifier is not found.            |
+| 422 Invalid State | error        | See the response body for details.                           |
+
+#### Example response body
+
+```
+HTTP 200 OK
+Content-Type: application/json
+{
+  "RangeValues": [
+    {
+      "Index": "2019-01-02T00:00:00Z",
+      "Status": "Warning",
+      "Value": 2,
+      "DisplayName": "AssetInWarning"
+    },
+    {
+      "Index": "2019-01-02T00:30:00Z",
+      "Status": "Bad",
+      "Value": 4,
+      "DisplayName": "AssetInBadState"
+    }
+  ],
+  "Statistics": [
+    {
+      "Status": "Warning",
+      "TotalInterval": "00:30:00",
+      "Values": [
+        {
+          "Value": 2,
+          "Interval": "00:30:00"
+        }
+      ]
+    },
+    {
+      "Status": "Bad",
+      "TotalInterval": "1246.06:30:00",
+      "Values": [
+        {
+          "Value": 4,
+          "Interval": "1246.06:30:00"
+        }
+      ]
+    }
+  ]
+}
+```
+
 
 ***
 
@@ -133,7 +236,7 @@ Returns the status of multiple assets.
 ### Request
 
 ```text 
-POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/bulk/Assets/status/last
+POST api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Bulk/Assets/Status/Last
 ```
 
 ### Parameters
@@ -178,24 +281,24 @@ Content-Type: application/json
    [
       {
          "AssetId": "AssetId-1",
-         "Status": 1, 
+         "Status": 1, 
          "Value": "85",
          "DisplayName": "TemperatureSensorBuild1InF",
-         "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+         "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
       },
       {
          "AssetId": "AssetId-2",
-         "Status": 2, 
+         "Status": 2, 
          "Value": "185",
          "DisplayName": "DeviceMeasurement",
-         "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+         "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
       },
       {
          "AssetId": "AssetId-3",
-         "Status": 1, 
+         "Status": 1, 
          "Value": "75",
          "DisplayName": "TemperatureSensorBuild5450InF",
-         "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
+         "DataRetrievalTime": "2020-05-04T16:55:26.3732693Z"
       }
    ]
 }

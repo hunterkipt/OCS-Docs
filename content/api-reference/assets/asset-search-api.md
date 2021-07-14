@@ -12,15 +12,13 @@ Returns an array of assets that meet the search criteria.
 ### Searchable Properties
 Assets can be searched on the following asset properties:
 
-<!-- When do we use the word "properties" and when do we use "fields"? -->
-
-- Asset Top-level Fields
+- Asset Top-level Properties
   - Id, Name, Description, AssetTypeId, AssetTypeName
 
-- Metadata Fields
+- Metadata Properties
   - Name, Description, Value
 
-- Stream Reference Fields
+- Stream Reference Properties
   - StreamReferenceName - Stream Reference Name
   - StreamPropertyId - SDS Stream Property Ids, not including indices
 
@@ -72,7 +70,7 @@ Searches all assets and returns a list of asset identifiers and their matched fi
 
 ### Request 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&{filterString}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets?skip={skip}&count={count}&orderby={orderby}&query={queryString}&{filterString}&pageSize={pageSize}&maxPages={maxPages}&continuationToken={continuationToken}
 ```
 
 ### Parameters  
@@ -110,9 +108,7 @@ A list of asset Ids and their matched fields.
 #### Example response body
 Below is a response when query string is "Name:Tracer".
 
-<!-- Anthony, should this be: "Name: Asset Tracer" -->
-
-`Count` represents the number of matched assets in the given query.
+- `Count` represents the number of matched assets in the given query.
 
  A list of results is returned. Each result contains:  
 -  `MatchProperties` - a list of matched property objects. Each `MatchProperties` object contains the matched fields and their values.
@@ -212,7 +208,7 @@ Asset faceted search allows for searching using asset facets. Asset facets are n
 ### Request 
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets/facets?name={category}&count={count}
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Facets?name={category}&count={count}
 ```
 
 ### Parameters  
@@ -285,7 +281,7 @@ Asset autocomplete allows you to query assets and retrieve a list of suggested a
 ### Request 
 
 ```text 
-GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/search/Assets/autocomplete?term={term}&facetCount={facetCount}&termCount={termCount}
+GET api/v1-preview/Tenants/{tenantId}/Namespaces/{namespaceId}/Search/Assets/Autocomplete?term={term}&facetCount={facetCount}&termCount={termCount}
 ```
 
 ### Parameters  
@@ -315,7 +311,7 @@ Assume you have the following assets in your system.
 | "Id": "AutoCompletedAsset_2", "Name": "tracerRound", "Description": "None", "Metadata": [{ "Id": "2", "Name": "tractorNumber", "Value": "tractor3",        "SdsTypeCode": "String"}] |
 | "Id": "AutoCompletedAsset_3", "Name": "tracerRound_Type2", "Description": "None", "Metadata": {"Id": "17", "Name": "track", "SdsTypeCode": "String", "Value": "100"}] |
 
-Performing a `GET search/assets/autocomplete?term=t&termcount=10&facetcount=10` returns the following response. 
+Performing a `GET Search/Assets/Autocomplete?term=t&termcount=10&facetcount=10` returns the following response. 
 
 
 ```json 
@@ -365,7 +361,7 @@ Performing a `GET search/assets/autocomplete?term=t&termcount=10&facetcount=10` 
 }
 ```
 
-Performing a `GET search/assets/autocomplete?term=t&facetcount=10` returns the following response. 
+Performing a `GET Search/Assets/Autocomplete?term=t&facetcount=10` returns the following response. 
 
 
 ```json 
